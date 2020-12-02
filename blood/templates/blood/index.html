@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'blood//main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blood/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blood/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blood/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blood/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blood/css/styles.css' %}">
+    {% if title %}
+            <title>Blood Bank - {{title}}</title>
+        {% else %}
+            <title>Blood Bank</title>
+        {% endif %}
+</head>
+
+<body class="text-left">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top border-warning shadow-lg" style="background-color: #cc3030;font-size: 17px;">
+        <div class="container"><a class="navbar-brand" href="#">Brand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="color: rgba(251,249,249,0.9);">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="color: rgba(251,249,249,0.9);">About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="color: rgba(254,251,251,0.9);">Products and Services</a></li>
+                </ul><a href="#"></a><a href="#" style="background-color: #f9f6f6;">Contact Us</a></div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h2>SANJEEVANI BLOOD BANK</h2>
+        <p><br>Today, blood donation has become an increasingly important facet of public health. It transcends barriers of caste, creed, status and truly symbolizes the universality of the human race. Sanjeevani Blood Bank Centre is a joint
+            venture between Rotary Club of Chandigarh and Blood Bank Society, Chandigarh. The Centre, started in July 2004, runs on the concept of 100% voluntary blood donations by means of either indoor or outdoor blood donations camps. The
+            centre provides round the clock service for blood and blood components to patients in and around Chandigarh.<br><br></p>
+        <p><a class="btn btn-outline-danger border-dark shadow-lg" role="button">Learn more</a></p>
+    </div>
+    <div class="carousel slide" data-ride="carousel" id="carousel-1">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active"><img class="w-100 d-block" src="{% static 'blood/img/back.jpg' %}" alt="Slide Image"></div>
+            <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image"></div>
+            <div class="carousel-item"><img class="w-100 d-block" src="{% static 'blood/img/back.jpg' %}" alt="Slide Image">
+            </div>
+        </div>
+        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+        <ol
+            class="carousel-indicators">
+            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-1" data-slide-to="1"></li>
+            <li data-target="#carousel-1" data-slide-to="2"></li>
+            </ol>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2017</p>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'blood/js/jquery.min.js' %}"></script>
+    <script src="{% static 'blood/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

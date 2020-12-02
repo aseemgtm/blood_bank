@@ -1,0 +1,107 @@
+{% extends "blood/base.html" %}
+{% block content %}
+<div id="outer">
+    <h4> Blood Groups : </h4>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="O" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="+" hidden>
+        <button class="btn btn-info mb-4" type="submit">O+</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="O" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="-" hidden>
+        <button class="btn btn-info mb-4" type="submit">O-</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="A" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="+" hidden>
+        <button class="btn btn-info mb-4" type="submit">A+</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="A" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="-" hidden>
+        <button class="btn btn-info mb-4" type="submit">A-</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="B" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="+" hidden>
+        <button class="btn btn-info mb-4" type="submit">B+</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="B" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="-" hidden>
+        <button class="btn btn-info mb-4" type="submit">B-</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="AB" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="+" hidden>
+        <button class="btn btn-info mb-4" type="submit">AB+</button>
+    </form>
+    <form method="get" class="inner">
+        <p hidden>{{ filter.form }}</p>
+        <input type="text" id="id_Blood_Group" name="Blood_Group" value="AB" hidden>
+        <input type="text" id="id_Rh_factor" name="Rh_factor" value="-" hidden>
+        <button class="btn btn-info mb-4" type="submit">AB-</button>
+    </form>
+</div>
+<br>
+
+<div id="outer">
+<form method="get" class="inner">
+    {{ X.form.as_p }}
+    <label for="id_city">Search by City:</label>
+    <input type="text" id="id_city" name="city" class="form-control">
+    <button class="btn btn-info mb-4" type="submit">Search</button>
+</form>
+</div>
+
+    <ul>
+    <section class="row-section">
+    <div class="container">
+    {% for donor in users %}
+        {% if donor.show == "Yes" %}
+                <div class="col-md-10 offset-md-1 row-block">
+                    <ul>
+                    <li><div class="media">
+                        <div class="media-body">
+                            <h4><u>{{ donor.user.first_name }} {{ donor.user.last_name }}</u></h4>
+                            <hr>
+                            <p><b>Blood Group:</b> {{ donor.Blood_Group }} {{ donor.Rh_factor }}</p>
+                            <p><b>Contact number:</b> {{ donor.contact_number }}</p>
+                            <p><b>Email:</b> {{ donor.user.email }}</p>
+                            <p><b>City:</b> {{ donor.city }}</p>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+        <script	  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>    
+        {% endif %}
+    {% endfor %}
+    </div>
+    </section>
+    </ul>
+    {% if users.has_other_pages %}
+        {% if users.has_previous %}
+          <a class="btn btn-outline-info mb-4" href="?page=1">First Page</a>
+          <a class="btn btn-outline-info mb-4" href="?page={{ users.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for num in users.paginator.page_range %}
+          {% if users.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+          {% elif num > users.number|add:'-3' and num < users.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+          {% endif %}
+        {% endfor %}
+        {% if users.has_next %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ users.next_page_number }}">Next</a>
+          <a class="btn btn-outline-info mb-4" href="?page={{ users.paginator.num_pages }}">Last</a>
+        {% endif %}
+    {% endif %}
+{% endblock content %}

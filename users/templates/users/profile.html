@@ -1,0 +1,39 @@
+{% extends "blood/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="content-section">
+        <div class="media">
+            <!--img class="rounded-circle account-img" src="{{ user.profile.image.url }}"-->
+            <div class="media-body">
+                <h1 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h1>
+                <h5 class="text-secondary">{{ user.email }}</h5>
+            </div>
+            <a class="btn btn-outline-info" href="{% url 'profile-update' %}">Update Profile</a>
+        </div>
+    </div>
+</div>
+<div class= container>
+    <div class="content-section">
+        <div class="media">
+            <div class="media-body">
+                <h1 class="account-heading">Your Donation History</h1>
+                {% for rep in reports %}
+                    <article class="media content-section">
+                        <div class="media-body">
+                            <h5>Blood ID : {{ rep.id }}</a></h5>
+                            <p class="article-content">{{ rep.date_collected }}</p>
+                            {% if rep.report %}
+                                <div>Report : <a  href="{{ rep.report.url }}" target="_blank" rel="noopener" download="">Blood Report</a></td>
+                                    <small>Please click on download button for Request Letter from.</small></div>
+                            {% else %}
+                                <div>Your report hasn't been generated yet. If it isn't generated under 2 days of blood donation please contact the Blood Bank.</div>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,126 @@
+{% extends "blood/base.html" %}
+{% block content %}
+{% load static %}
+
+<div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <!--li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li-->
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src='{% static "blood/image/ss.png" %}' class="img">
+            </div> <!--End Active-->
+            <!--div class="item">
+                <img src='{% static "blood/image/ss.png" %}' >
+            </div>
+            <div class="item">
+                <img src='{% static "blood/image/red.png" %}'>
+            </div-->
+        </div>
+        <!--Start Slider Controls-->
+        <a class="left carousel-control" href="#myCarousel" role="buttton" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="buttton" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> <!--End Slider-->
+
+    <div class="container text-center">
+        <h2>In case of emergency contact <u>+91 7777777777</u></h2>
+        <!--div class="row">
+            <div>
+                <a href="{% url 'seeker-register' %}"><img src='{% static "blood/image/Emergency.png" %}' class="Centre" id="icon"></a>
+                <h4>HTML5</h4>
+            </div>
+            <div class='col-sm-4'>
+                <img src='{% static "blood/image/bootstrap.png" %}' id="icon">
+                <h4>Bootstrap</h4>
+            </div>
+            <div class='col-sm-4'>
+                <img src='{% static "blood/image/css3.png" %}' id="icon">
+                <h4>CSS3</h4>
+            </div>
+        </div-->
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 container">
+                <h4><b> WHAT IS BLOOD? </b></h4>
+                <p> Blood is the red coloured fluid flowing continuously in our body’s circulatory system. About 1/12th of the body weight of a healthy individual is blood. On an average there are about 5 – 6 litres of blood present.</p>
+                <br><h4><b> HOW IS BLOOD FORMED?</b></h4>
+                <p>Blood consists of RBCs, WBCs, platelets suspended in plasma. In early embryonic life blood cells are formed in liver and spleen. But by the fifth month the Haemopoiesis (i.e., formation of blood.) occurs in bone marrow and lymphatic tissues.</p>
+            </div>
+            <div class="col-md-6" align="right">
+                <img src='{% static "blood/image/blood.png" %}' class="img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="text">
+            <h3>Download Forms</h3>						
+                <table>
+                    <tbody>
+                    <tr>
+                        <td><a class="btn" href="{% static 'blood/request-letter.pdf' %}" target="_blank" rel="noopener" download="">Download</a></td>
+                        <td>Please click on download button for Request Letter Form.</td>
+                    </tr>
+                    <tr>
+                        <td><a class="btn" href="{% static 'blood/immediate-spin-techique-consent-form.pdf' %}" target="_blank" rel="noopener" download="">Download</a></td>
+                        <td>Please click on download button for Immediate Spin Technique Consent Form</td>
+                    </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h2> Be a Donor</h2>
+                <br>
+                <h4> <b> HEALTHY DONOR </b> </h4>
+                <p>Any person within the age group of 18 – 60 years with a body weight as minimum 45 kgs,
+                     and having hemoglobin content as minimum 12.5 gm%</p>
+                <br>
+                <h4> <b> AFTER DONATING BLOOD </b> </h4>
+                <p>The donor needs rest, preferably lying down, so that the amount of blood that has been donated soon
+                     gets poured into the circulation from the body pools in a natural way. The donor should take it easy for about 15 – 20 minutes.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><br><br><br><br><br><br>
+                <a href="{% url 'register' %}"><img src='{% static "blood/image/donor.jpg" %}' class="img-responsive"></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h2>What to expect</h2>
+                <br>
+                <h4> <b> BEFORE DONATING BLOOD </b> </h4>
+                <p>Eat something substantial before your appointment. This might be cereal and toast for breakfast, or a sandwich at lunchtime. Please don’t come in on an empty stomach…</p>
+                <br>
+                <h4> <b> DURING DONATION </b> </h4>
+                <p>Giving blood takes just 5-10 minutes but you should allow about an hour from arrival to departure, which includes time for your interview and refreshments.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><br><br><br><br><br>
+                <img src='{% static "blood/image/bb.jpg" %}' class="img-responsive">
+            </div>
+        </div>
+    </div>
+
+    <!--div class="container">
+        <div class="row">
+            <h4><a href="#hidden" data-toggle="collapse">Care to learn more about bootstrap?</a></h4>
+            <div id="hidden" class="collapse">
+                <h4> wegfwuekufhkwhkuahku </h4>
+                <p> hjwgfgfsaukwuaekufaekfafugwkfauhfjkahsfjkh</p>
+                <p> wkgfegukyrgaugyefuayegfakeygkuayegfkyaegfkyugkuyagkuayegwfjygjaygf</p>
+            </div>
+        </div>
+    </div>
+</div-->
+
+{% endblock content %}

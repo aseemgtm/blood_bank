@@ -1,0 +1,83 @@
+{% extends "blood/base.html" %}
+{% block content %}
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Blood Type</th>
+        <th scope="col">O+ </th>
+        <th scope="col">O- </th>
+        <th scope="col">A+ </th>
+        <th scope="col">A- </th>
+        <th scope="col">B+ </th>
+        <th scope="col">B- </th>
+        <th scope="col">AB+</th>
+        <th scope="col">AB-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Whole Blood(WB)</th>
+        <td>{{ wba.count }}</td>
+        <td>{{ wbb.count }}</td>
+        <td>{{ wbc.count }}</td>
+        <td>{{ wbd.count }}</td>
+        <td>{{ wbe.count }}</td>
+        <td>{{ wbf.count }}</td>
+        <td>{{ wbg.count }}</td>
+        <td>{{ wbh.count }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Packed Red Blood Cells(PRBC)</th>
+        <td>{{ prbca.count }}</td>
+        <td>{{ prbcb.count }}</td>
+        <td>{{ prbcc.count }}</td>
+        <td>{{ prbcd.count }}</td>
+        <td>{{ prbce.count }}</td>
+        <td>{{ prbcf.count }}</td>
+        <td>{{ prbcg.count }}</td>
+        <td>{{ prbch.count }}</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">Fresh Frozen Plasma(FFP)</th>
+        <td>{{ ffpa.count }}</td>
+        <td>{{ ffpb.count }}</td>
+        <td>{{ ffpc.count }}</td>
+        <td>{{ ffpd.count }}</td>
+        <td>{{ ffpe.count }}</td>
+        <td>{{ ffpf.count }}</td>
+        <td>{{ ffpg.count }}</td>
+        <td>{{ ffph.count }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Platelet Concentrate(PC)</th>
+        <td>{{ pca.count }}</td>
+        <td>{{ pcb.count }}</td>
+        <td>{{ pcc.count }}</td>
+        <td>{{ pcd.count }}</td>
+        <td>{{ pce.count }}</td>
+        <td>{{ pcf.count }}</td>
+        <td>{{ pcg.count }}</td>
+        <td>{{ pch.count }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Cryoprecipitate(CRYO)</th>
+        <td>{{ cryoa.count }}</td>
+        <td>{{ cryob.count }}</td>
+        <td>{{ cryoc.count }}</td>
+        <td>{{ cryod.count }}</td>
+        <td>{{ cryoe.count }}</td>
+        <td>{{ cryof.count }}</td>
+        <td>{{ cryog.count }}</td>
+        <td>{{ cryoh.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form action="{% url 'update' %}" method="POST">
+    {% csrf_token %}
+        <button class="btn btn-outline-info mb-4" type="submit">Update</button>
+  </form>
+</div>
+{% endblock content %}
