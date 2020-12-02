@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'blood_bank.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blood_bank',
+        'NAME': '', #Add your database name
         'USER': 'postgres',
-        'PASSWORD': 'Kenpachi.',
+        'PASSWORD': '', #Add your password
         'HOST': 'localhost',
         'OPTIONS': {
             'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
